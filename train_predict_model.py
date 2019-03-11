@@ -7,15 +7,14 @@ from keras.layers.core import Dense, Dropout, Activation, Flatten
 
 from keras.optimizers import Adam
 
-from keras.applications.nasnet import NASNetMobile
+from keras import callbacks
 
 from keras.layers.normalization import BatchNormalization
-
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
-batch_size    = 32
+batch_size    = 128
 
 epochs        = 200
 
@@ -56,8 +55,7 @@ def load_data_from_csv(csv_path):
 def create_model(): 
     model = Sequential()
 
-    model.add(Dense(64, activation='sigmoid'))
-    model.add(Dense(128, activation='sigmoid'))
+    model.add(BatchNormalization())
     model.add(Dense(128, activation='sigmoid'))
     model.add(Dense(3, activation='softmax'))
 
@@ -70,6 +68,8 @@ history = {
     'train-loss': [], 'train-accuracy': [],
     'test-loss': [], 'test-accuracy': [],
 }
+
+
 
 X_train, Y_train = load_data_from_csv('data/train.csv')
 X_test, Y_test   = load_data_from_csv('data/val.csv')
