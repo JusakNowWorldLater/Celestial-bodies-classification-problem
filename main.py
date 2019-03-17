@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import f1_score
 import matplotlib.pyplot as plt
 from plotnine import *
@@ -38,7 +37,7 @@ def split_data(db):
 
 def preprocess_XData(XData):
 	XData = XData.drop("objid", axis = 1)
-	XData = XData.drop(columns=['ra', 'dec','rowc','colc', 'rowv', 'colv'])
+	XData = XData.drop(columns=['ra', 'dec','rowc','colc', 'rowv', 'colv', 'u_1', 'g_1', 'r_1', 'z_1', 'r_2', 'i_1', 'u_2', 'z_2', 'g_2', 'i_2'])
 	return XData
 
 def main():
@@ -61,7 +60,7 @@ def main():
 	X_test     = preprocess_XData(X_test)
 
 
-	model = RandomForestClassifier(max_depth=15, n_estimators=50, max_features='auto',random_state=42)
+	model = RandomForestClassifier(max_depth=30, n_estimators=100, max_features='auto')
 	model.fit(X_train, y_train)
 
 	print("Test accuracy for default forest:", model.score(X_test, y_test))

@@ -17,11 +17,11 @@ from sklearn.metrics import f1_score
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
-batch_size    = 128
+batch_size    = 256
 
-epochs        = 200
+epochs        = 1000
 
-learning_rate = 0.0001
+learning_rate = 0.0003
 
 dropout       = 0.5
 
@@ -72,7 +72,7 @@ def create_model():
     model = Sequential()
 
     model.add(BatchNormalization())
-    model.add(Dense(128, activation='sigmoid'))
+    model.add(Dense(128, activation='relu'))
     model.add(Dense(3, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=learning_rate), metrics=["accuracy"])
