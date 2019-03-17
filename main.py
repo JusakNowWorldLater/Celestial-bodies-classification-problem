@@ -3,8 +3,6 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
-import matplotlib.pyplot as plt
-from plotnine import *
 
 import sys
 

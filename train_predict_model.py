@@ -19,7 +19,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 batch_size    = 256
 
-epochs        = 1000
+epochs        = 300
 
 learning_rate = 0.0003
 
