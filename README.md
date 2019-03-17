@@ -6,9 +6,9 @@ In example:
 * python3 main.py data/train.csv data/unlabeled.csv data/test.csv results/prediction.csv
 
 **Dependencies:**\
-To run this script("main.py") you should have installed following libraries: **numpy, pandas, sklearn** \
-To run "train_predict_model.py" you should have: **pandas, numpy, os, sklearn, keras, tensorflow**\
-To see research "research.ipynb" you should have: **numpy, pandas, sklearn, matplotlib, plotnine, seaborn**
+To run this script("main.py") you should have installed following libraries: **numpy pandas sklearn** \
+To run "train_predict_model.py" you should have: **pandas numpy os sklearn keras tensorflow**\
+To see research "research.ipynb" you should have: **numpy pandas sklearn matplotlib plotnine seaborn**
 
 **Results:**
 * Random forest classifier:
