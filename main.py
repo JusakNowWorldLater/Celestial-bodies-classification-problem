@@ -4,6 +4,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 
+import sys
+
+import warnings
+warnings.filterwarnings("ignore", category = FutureWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
 def split_data(db):
 	db_wthno_na = db.copy()
 	db_wthno_na = db_wthno_na.replace('na', 0)
